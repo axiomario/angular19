@@ -1,6 +1,7 @@
 @let test = 'test...';
 @let a = 20;
 @let b = 10;
+@let case = a/b;
 <router-outlet />
 <input-output [name]="user" (nameChange)="handleNameChange()" [nameSignal]="user" (nameEventSignal)="handleNameEventSignal($event)"></input-output>
 <h1>{{test}}</h1>
@@ -10,4 +11,15 @@
   <h1>{{a}} is less than {{b}}</h1>
 } @else {
   <h1>{{a}} is equal to {{b}}</h1>
+}
+@switch (case) {
+  @case (1) {
+    <h1>Case 1</h1>
+  }
+  @case (2) {
+    <h1>Case 2</h1>
+  }
+  @default {
+    <h1>Default Case</h1>
+  }
 }
