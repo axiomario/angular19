@@ -1,2 +1,13 @@
+@let test = 'test...';
+@let a = 20;
+@let b = 10;
 <router-outlet />
 <input-output [name]="user" (nameChange)="handleNameChange()" [nameSignal]="user" (nameEventSignal)="handleNameEventSignal($event)"></input-output>
+<h1>{{test}}</h1>
+@if (a > b) {
+  <h1>{{a}} is greater than {{b}}</h1>
+} @else if (a < b) {
+  <h1>{{a}} is less than {{b}}</h1>
+} @else {
+  <h1>{{a}} is equal to {{b}}</h1>
+}
