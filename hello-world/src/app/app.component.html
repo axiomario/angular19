@@ -2,9 +2,11 @@
 @let a = 20;
 @let b = 10;
 @let case = a/b;
+@let list = [1, 2, 3, 4, 5];
 <router-outlet />
 <input-output [name]="user" (nameChange)="handleNameChange()" [nameSignal]="user" (nameEventSignal)="handleNameEventSignal($event)"></input-output>
 <h1>{{test}}</h1>
+
 @if (a > b) {
   <h1>{{a}} is greater than {{b}}</h1>
 } @else if (a < b) {
@@ -12,6 +14,7 @@
 } @else {
   <h1>{{a}} is equal to {{b}}</h1>
 }
+
 @switch (case) {
   @case (1) {
     <h1>Case 1</h1>
@@ -22,4 +25,10 @@
   @default {
     <h1>Default Case</h1>
   }
+}
+
+@for (item of list; track item) {
+  <h1>{{item}}</h1>
+} @empty {
+  <h1>List is empty</h1>
 }
