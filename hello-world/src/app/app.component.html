@@ -5,6 +5,8 @@
 @let list = [1, 2, 3, 4, 5];
 <router-outlet />
 <input-output [name]="user" (nameChange)="handleNameChange()" [nameSignal]="user" (nameEventSignal)="handleNameEventSignal($event)"></input-output>
+<br>
+<app-signals></app-signals>
 <h1>{{test}}</h1>
 
 @if (a > b) {
