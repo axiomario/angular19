@@ -10,6 +10,7 @@ import { Component, effect, EffectRef, Injector, OnInit, signal } from '@angular
 export class SignalsComponent implements OnInit {
   public counter = signal(0);
   private logEffect?: EffectRef;
+  public tasks = signal<Task[]>([]);
 
   constructor(private injector: Injector) {
     /*effect(() => {
@@ -33,4 +34,13 @@ export class SignalsComponent implements OnInit {
   public stopEffect(): void {
     this.logEffect!.destroy();
   }
+
+  public addTask():void {
+    const task = new Task(this.tasks().length + 1, `Task ${this.tasks().length + 1}`);
+    this.tasks.update((tasks) => [...tasks, task]);
+  }
+}
+
+class Task {
+  constructor(public id: number, public name: string) {}
 }
