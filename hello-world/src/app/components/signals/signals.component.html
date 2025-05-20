@@ -1,12 +1,14 @@
 <button (click)="increment()">Increment</button>
 {{counter()}}
 <button (click)="stopEffect()">Stop effect</button>
-<button (click)="addTask()">Add task</button>
-@for (task of tasks(); track task.id) {
+<button (click)="addProduct()">Add product</button>
+@for (product of products(); track product.id) {
   <div style="display: flex;">
-    <h3>{{task.id}}</h3>
-    <p>{{task.name}}</p>
+    <h3>{{product.id}}</h3>
+    <p>{{product.name}}</p>
+    <p>{{product.price | currency}}</p>
   </div>
 } @empty {
-  <h1>No tasks</h1>
+  <h1>No products</h1>
 }
+<h3>Total amount: {{totalAmount() | currency}}</h3>
