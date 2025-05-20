@@ -1,10 +1,11 @@
 import { Component, effect, viewChild, ViewChild } from '@angular/core';
 import { ChildrenCounterComponent } from './children-counter/children-counter.component';
+import { ChildrenMyCardComponent } from "./children-my-card/children-my-card.component";
 
 @Component({
   selector: 'app-children',
   standalone: true,
-  imports: [ChildrenCounterComponent],
+  imports: [ChildrenCounterComponent, ChildrenMyCardComponent],
   templateUrl: './children.component.html',
   styleUrl: './children.component.scss'
 })
