@@ -1,4 +1,6 @@
 import { Component, effect, EffectRef, Injector, OnInit, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-signals',
@@ -11,11 +13,16 @@ export class SignalsComponent implements OnInit {
   public counter = signal(0);
   private logEffect?: EffectRef;
   public tasks = signal<Task[]>([]);
+  private observable = interval(1000);
+  private observableSignal = toSignal(this.observable);
 
   constructor(private injector: Injector) {
     /*effect(() => {
       console.log('Counter value:', this.counter());
     });*/
+    effect(() => {
+      console.log('toSignal:', this.observableSignal());
+    });
   }
 
   ngOnInit(): void {
