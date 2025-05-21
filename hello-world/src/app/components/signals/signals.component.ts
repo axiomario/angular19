@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, effect, EffectRef, Injector, OnInit, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { interval } from 'rxjs';
+import { InputSignalComponent } from "./input-signal/input-signal.component";
 
 @Component({
   selector: 'app-signals',
-  imports: [CommonModule],
+  imports: [CommonModule, InputSignalComponent],
   standalone: true,
   templateUrl: './signals.component.html',
   styleUrl: './signals.component.scss'
@@ -19,6 +20,7 @@ export class SignalsComponent implements OnInit {
   public readonly totalAmount = computed(() => {
     return this.products().reduce((acc, product) => acc + product.price, 0);
   });
+  public name = signal('Mario');
 
   constructor(private injector: Injector) {
     /*effect(() => {
