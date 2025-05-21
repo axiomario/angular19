@@ -3,7 +3,6 @@
 @let b = 10;
 @let case = a/b;
 @let list = [1, 2, 3, 4, 5];
-<router-outlet />
 <input-output [name]="user" (nameChange)="handleNameChange()" [nameSignal]="user" (nameEventSignal)="handleNameEventSignal($event)"></input-output>
 <br>
 <app-signals></app-signals>
@@ -36,3 +35,5 @@
 }
 
 <app-children></app-children>
+
+<app-defer-example></app-defer-example>

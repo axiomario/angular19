@@ -1,0 +1,21 @@
+<div style="width: 100%; height: 500px; background-color: red;"></div>
+<button (click)="ready = true">show defer one</button>
+@defer (when ready) {
+  <app-defer-one></app-defer-one>
+} @loading {
+  <span>Loading...</span>
+} @placeholder {
+  <span>Loading placeholder...</span>
+} @error {
+  <span>Error loading component</span>
+}
+@defer (on viewport) {
+  <app-defer-two></app-defer-two>
+} @placeholder {
+  <span>on viewport...</span>
+}
+@defer (on hover) {
+  <app-defer-one></app-defer-one>
+} @placeholder {
+  <span>Hover...</span>
+}

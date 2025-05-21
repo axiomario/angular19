@@ -3,14 +3,15 @@ import { RouterOutlet } from '@angular/router';
 import { InputOutputComponent } from './components/input-output/input-output.component';
 import { SignalsComponent } from './components/signals/signals.component';
 import { ChildrenComponent } from './components/children/children.component';
+import { DeferExampleComponent } from './components/defer-example/defer-example.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
     InputOutputComponent,
     SignalsComponent,
-    ChildrenComponent
+    ChildrenComponent,
+    DeferExampleComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
